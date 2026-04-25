@@ -2,8 +2,12 @@ name: Model Daily Update
 
 on:
   schedule:
-    - cron: '0 2 * * *' # 每天北京时间 10:00 运行
-  workflow_dispatch: # 支持手动点击按钮触发
+    - cron: '0 2 * * *' 
+  workflow_dispatch: 
+
+# 全局环境变量，解决 Node.js 版本弃用警告
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   update-data:
@@ -11,11 +15,13 @@ jobs:
     permissions:
       contents: write
     steps:
+      # 1. 尝试升级到 v5 (通常新版会支持更新的 Node)
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # 如果 v5 发布了，请改为 v5
 
+      # 2. 升级到 v5 以支持 Node 24
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5 
         with:
           python-version: '3.10'
 
