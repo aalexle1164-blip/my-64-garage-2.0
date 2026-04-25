@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>64比例全球车模情报站</title>
+    <title>Global 1:64 Diecast Hub</title>
     <style>
         :root { --bg: #ffffff; --card: #f6f8fa; --text: #1f2328; --accent: #0969da; --border: #d0d7de; }
         [data-theme="dark"] { --bg: #0d1117; --card: #161b22; --text: #e6edf3; --accent: #58a6ff; --border: #30363d; }
         body { background: var(--bg); color: var(--text); font-family: -apple-system, system-ui, sans-serif; margin: 0; transition: 0.3s; }
-        
-        /* 导航栏 */
-        header { padding: 20px 5%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10; }
+        header { padding: 20px 5%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; backdrop-filter: blur(10px); }
         .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .search-input { padding: 8px 15px; border-radius: 6px; border: 1px solid var(--border); background: var(--card); color: var(--text); width: 250px; }
-        
-        /* 品牌筛选 */
-        .brand-bar { padding: 15px 5%; display: flex; gap: 10px; overflow-x: auto; max-width: 1200px; margin: 0 auto; }
-        .filter-btn { padding: 5px 12px; border-radius: 15px; border: 1px solid var(--border); cursor: pointer; background: var(--card); color: var(--text); white-space: nowrap; }
-        .filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
-
-        /* 网格布局 */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 20px 5%; max-width: 1200px; margin: 0 auto; }
-        .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; cursor: pointer; transition: 0.2s; }
-        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        .card-img { width: 100%; height: 160px; object-fit: cover; background: #eee; }
-        .card-body { padding: 15px; }
-
-        /* 模态框 */
-        .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.7); z-index: 100; align-items: center; justify-content: center; }
-        .modal-content { background: var(--bg); padding: 30px; border-radius: 12px; max-width: 500px; width: 90%; position: relative; }
-        .close-btn { position: absolute; right: 20px; top: 15px; font-size: 24px; cursor: pointer; }
+        .search-input { padding: 10px 15px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: var(--text); width: 250px; outline: none; }
+        .search-input:focus { border-color: var(--accent); ring: 2px var(--accent); }
+        .brand-bar { padding: 15px 5%; display: flex; gap: 10px; overflow-x: auto; max-width: 1200px; margin: 0 auto; scrollbar-width: none; }
+        .filter-btn { padding: 6px 16px; border-radius: 20px; border: 1px solid var(--border); cursor: pointer; background: var(--card); color: var(--text); white-space: nowrap; transition: 0.2s; font-weight: 500; }
+        .filter-btn:hover, .filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; padding: 20px 5%; max-width: 1200px; margin: 0 auto; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; cursor: pointer; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); border-color: var(--accent); }
+        .card-img { width: 100%; height: 180px; object-fit: cover; background: #ddd; }
+        .card-body { padding: 18px; }
+        .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center; backdrop-filter: blur(8px); }
+        .modal-content { background: var(--bg); border-radius: 20px; max-width: 600px; width: 90%; position: relative; overflow: hidden; animation: zoom 0.3s ease; }
+        @keyframes zoom { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .modal-info { padding: 30px; }
+        .close-btn { position: absolute; right: 20px; top: 15px; font-size: 32px; cursor: pointer; color: #fff; z-index: 1100; }
+        .tag { font-size: 12px; font-weight: bold; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
@@ -37,39 +33,35 @@
 <header>
     <div class="nav-inner">
         <h2 style="margin:0;">DIECAST<span style="color:var(--accent)">64</span></h2>
-        <div>
-            <input type="text" class="search-input" id="search" placeholder="搜索模型...">
-            <button onclick="toggleTheme()" style="background:none; border:none; cursor:pointer; font-size:20px;">🌓</button>
+        <div style="display:flex; gap:12px; align-items: center;">
+            <input type="text" class="search-input" id="search" placeholder="搜索品牌或车型...">
+            <button onclick="toggleTheme()" style="background:none; border:none; cursor:pointer; font-size:22px;">🌓</button>
         </div>
     </div>
 </header>
 
 <div class="brand-bar" id="brandBar"></div>
-
 <main class="grid" id="modelGrid"></main>
 
-<div class="modal" id="modal">
+<div class="modal" id="modal" onclick="if(event.target==this)closeModal()">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
     <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
         <div id="modalBody"></div>
     </div>
 </div>
 
 <script>
     let allData = [];
+    const fallbackImg = 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800';
 
-    // 初始化加载
     async function init() {
         try {
-            // 尝试读取本地生成的 data.json
-            const res = await fetch('data.json');
+            // 加上时间戳，解决 GitHub Pages 缓存不更新数据的问题
+            const res = await fetch('data.json?t=' + Date.now());
             allData = await res.json();
         } catch (e) {
-            console.log("未检测到 data.json，使用演示数据");
-            allData = [
-                { brand: 'MiniGT', name: 'Nissan Silvia S15 Top Secret', price: '99', material: '合金', date: '2024-06', arrival: '2024-08', img: 'https://via.placeholder.com/400x250?text=MiniGT+S15' },
-                { brand: 'LCD', name: 'Pagani Huayra BC', price: '85', material: '合金', date: '2024-05', arrival: '现货', img: 'https://via.placeholder.com/400x250?text=LCD+Pagani' }
-            ];
+            console.error("Data fetch failed, loading default info");
+            allData = [{ brand: 'SYSTEM', name: '数据同步中，请稍后刷新...', price: '0', material: '-', date: '-', arrival: '-', img: fallbackImg }];
         }
         renderBrands();
         renderModels(allData);
@@ -78,37 +70,57 @@
     function renderBrands() {
         const brands = ['全部', ...new Set(allData.map(d => d.brand))];
         document.getElementById('brandBar').innerHTML = brands.map(b => 
-            `<div class="filter-btn" onclick="filterBrand('${b}')">${b}</div>`
+            `<div class="filter-btn" onclick="filterBrand('${b}', this)">${b}</div>`
         ).join('');
     }
 
     function renderModels(data) {
-        document.getElementById('modelGrid').innerHTML = data.map((item, index) => `
+        const grid = document.getElementById('modelGrid');
+        if(data.length === 0) {
+            grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">未找到相关车模信息</p>';
+            return;
+        }
+        grid.innerHTML = data.map((item, index) => `
             <div class="card" onclick="showDetail(${index})">
-                <img src="${item.img}" class="card-img">
+                <img src="${item.img}" class="card-img" onerror="this.src='${fallbackImg}'">
                 <div class="card-body">
-                    <small style="color:var(--accent)">${item.brand}</small>
-                    <div style="font-weight:bold; margin:5px 0;">${item.name}</div>
-                    <div style="color:var(--accent)">￥${item.price}</div>
+                    <span class="tag">${item.brand}</span>
+                    <div style="font-weight:700; margin:8px 0; font-size:1.1rem; line-height:1.3; height:2.6em; overflow:hidden;">${item.name}</div>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="color:var(--accent); font-weight:bold; font-size:1.2rem;">￥${item.price}</span>
+                        <small style="color:gray;">${item.date}</small>
+                    </div>
                 </div>
             </div>
         `).join('');
     }
 
-    function filterBrand(brand) {
-        const filtered = brand === '全部' ? allData : allData.filter(d => d.brand === brand);
-        renderModels(filtered);
+    function filterBrand(brand, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        if(btn) btn.classList.add('active');
+        renderModels(brand === '全部' ? allData : allData.filter(d => d.brand === brand));
     }
+
+    document.getElementById('search').oninput = (e) => {
+        const val = e.target.value.toLowerCase();
+        renderModels(allData.filter(d => d.name.toLowerCase().includes(val) || d.brand.toLowerCase().includes(val)));
+    };
 
     function showDetail(index) {
         const item = allData[index];
         document.getElementById('modalBody').innerHTML = `
-            <img src="${item.img}" style="width:100%; border-radius:8px; margin-bottom:15px;">
-            <h3>${item.name}</h3>
-            <p><b>厂商：</b>${item.brand} | <b>材质：</b>${item.material}</p>
-            <p><b>价格：</b>￥${item.price}</p>
-            <p><b>发售时间：</b>${item.date}</p>
-            <p><b>预计到货：</b>${item.arrival}</p>
+            <img src="${item.img}" style="width:100%; height:320px; object-fit:cover;" onerror="this.src='${fallbackImg}'">
+            <div class="modal-info">
+                <span class="tag">${item.brand}</span>
+                <h2 style="margin:10px 0 20px 0; line-height:1.2;">${item.name}</h2>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; border-top: 1px solid var(--border); padding-top:20px;">
+                    <div><small style="color:gray;">材质</small><br><b>${item.material}</b></div>
+                    <div><small style="color:gray;">官方价格</small><br><b>￥${item.price}</b></div>
+                    <div><small style="color:gray;">发售表日期</small><br><b>${item.date}</b></div>
+                    <div><small style="color:gray;">预计到货</small><br><b>${item.arrival}</b></div>
+                </div>
+                <button onclick="closeModal()" style="width:100%; margin-top:30px; padding:12px; border-radius:8px; border:none; background:var(--accent); color:white; font-weight:bold; cursor:pointer;">关闭详情</button>
+            </div>
         `;
         document.getElementById('modal').style.display = 'flex';
     }
@@ -118,7 +130,6 @@
         const t = document.documentElement.getAttribute('data-theme');
         document.documentElement.setAttribute('data-theme', t === 'dark' ? 'light' : 'dark');
     }
-
     init();
 </script>
 </body>
