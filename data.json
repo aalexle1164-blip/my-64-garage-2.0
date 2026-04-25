@@ -1,12 +1,13 @@
 [
     {
         "brand": "MiniGT",
-        "name": "Nissan Silvia S15 Top Secret Silver",
+        "name": "Nissan Silvia S15 Top Secret",
         "price": "99",
         "material": "合金",
         "date": "2024-07",
-        "arrival": "2024-10",
-        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
+        "kw": "nissan,s15",
+        "img": "https://images.unsplash.com/photo-1?auto=format&fit=crop&w=800&q=80&ixlib=rb-4.0.3&m=search&term=nissan,s15&sig=3591",
+        "arrival": "2024-Q4"
     },
     {
         "brand": "MiniGT",
@@ -14,8 +15,9 @@
         "price": "105",
         "material": "合金",
         "date": "2024-08",
-        "arrival": "2024-12",
-        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
+        "kw": "lamborghini,revuelto",
+        "img": "https://images.unsplash.com/photo-1?auto=format&fit=crop&w=800&q=80&ixlib=rb-4.0.3&m=search&term=lamborghini,revuelto&sig=3790",
+        "arrival": "2024-Q4"
     },
     {
         "brand": "Almost Real",
@@ -23,8 +25,9 @@
         "price": "280",
         "material": "合金",
         "date": "2024-06",
-        "arrival": "现货",
-        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
+        "kw": "pagani,zonda",
+        "img": "https://images.unsplash.com/photo-1?auto=format&fit=crop&w=800&q=80&ixlib=rb-4.0.3&m=search&term=pagani,zonda&sig=2449",
+        "arrival": "2024-Q4"
     },
     {
         "brand": "BBR",
@@ -32,34 +35,48 @@
         "price": "185",
         "material": "树脂",
         "date": "2024-05",
-        "arrival": "现货",
-        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
+        "kw": "ferrari,296",
+        "img": "https://images.unsplash.com/photo-1?auto=format&fit=crop&w=800&q=80&ixlib=rb-4.0.3&m=search&term=ferrari,296&sig=2079",
+        "arrival": "2024-Q4"
     },
     {
         "brand": "Inno64",
-        "name": "Nissan Skyline GT-R R34 Nismo",
+        "name": "Nissan Skyline GT-R R34",
         "price": "135",
         "material": "合金",
         "date": "2024-10",
-        "arrival": "2025-02",
-        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
+        "kw": "skyline,r34",
+        "img": "https://images.unsplash.com/photo-1?auto=format&fit=crop&w=800&q=80&ixlib=rb-4.0.3&m=search&term=skyline,r34&sig=2965",
+        "arrival": "2024-Q4"
     },
     {
         "brand": "LCD",
-        "name": "Honda Civic Type R FL5 White",
+        "name": "Honda Civic Type R FL5",
         "price": "79",
         "material": "合金",
         "date": "2024-06",
-        "arrival": "现货",
-        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
+        "kw": "civic,typer",
+        "img": "https://images.unsplash.com/photo-1?auto=format&fit=crop&w=800&q=80&ixlib=rb-4.0.3&m=search&term=civic,typer&sig=7477",
+        "arrival": "2024-Q4"
     },
     {
         "brand": "Tarmac Works",
-        "name": "Toyota Hiace Widebody Pink",
+        "name": "Toyota Hiace Widebody",
         "price": "125",
         "material": "合金",
         "date": "2024-07",
-        "arrival": "2024-11",
-        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
+        "kw": "toyota,hiace",
+        "img": "https://images.unsplash.com/photo-1?auto=format&fit=crop&w=800&q=80&ixlib=rb-4.0.3&m=search&term=toyota,hiace&sig=740",
+        "arrival": "2024-Q4"
+    },
+    {
+        "brand": "Ignition Model",
+        "name": "Mazda RX-7 FD3S RE-Amemiya",
+        "price": "245",
+        "material": "树脂",
+        "date": "2024-11",
+        "kw": "mazda,rx7",
+        "img": "https://images.unsplash.com/photo-1?auto=format&fit=crop&w=800&q=80&ixlib=rb-4.0.3&m=search&term=mazda,rx7&sig=31",
+        "arrival": "2024-Q4"
     }
 ]
