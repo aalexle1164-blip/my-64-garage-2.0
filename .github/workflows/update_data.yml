@@ -5,35 +5,52 @@ on:
     - cron: '0 2 * * *' 
   workflow_dispatch: 
 
-# 全局环境变量，解决 Node.js 版本弃用警告
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   update-data:
+    # 强制指定使用最新的 ubuntu 镜像，通常它会预装最新的运行环境
     runs-on: ubuntu-latest
+    
+    # 设置权限，确保能够推送到仓库
     permissions:
       contents: write
-    steps:
-      # 1. 尝试升级到 v5 (通常新版会支持更新的 Node)
-      - name: Checkout code
-        uses: actions/checkout@v4 # 如果 v5 发布了，请改为 v5
 
-      # 2. 升级到 v5 以支持 Node 24
+    steps:
+      # 1. 检出代码 - 保持 v4，但通过环境变量强制运行时
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # 确保拉取所有历史记录，避免 git push 失败
+          fetch-depth: 0
+
+      # 2. 安装 Python - 使用最新的 v5 版本
       - name: Set up Python
-        uses: actions/setup-python@v5 
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+          # 告诉 setup-python 使用当前系统的 Node 运行
+          update-environment: true
 
+      # 3. 安装依赖并运行爬虫
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Run Crawler
         run: python crawler.py
 
+      # 4. 提交数据 - 使用更稳健的提交逻辑
       - name: Commit and Push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.name "ModelBot"
-          git config --global user.email "bot@github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Daily data sync" && git push)
+          # 检查是否有文件更改，没有则退出，有则提交
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update model data $(date +'%Y-%m-%d %H:%M')"
+            git push origin main
+          fi
