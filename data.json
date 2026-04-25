@@ -1,39 +1,53 @@
 [
     {
         "brand": "MiniGT",
-        "name": "Nissan Silvia S15",
+        "name": "Nissan Silvia S15 Top Secret",
         "price": "99",
         "material": "合金",
         "date": "2024-07",
-        "img": "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=800",
-        "arrival": "现货"
+        "kw": "nissan,s15,car",
+        "img": "https://source.unsplash.com/featured/800x600?nissan,s15,car&sig=7072",
+        "arrival": "2024-Q4"
     },
     {
         "brand": "MiniGT",
-        "name": "Lamborghini Revuelto",
+        "name": "Lamborghini Revuelto Orange",
         "price": "105",
         "material": "合金",
         "date": "2024-08",
-        "img": "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=800",
-        "arrival": "现货"
+        "kw": "lamborghini,revuelto",
+        "img": "https://source.unsplash.com/featured/800x600?lamborghini,revuelto&sig=5218",
+        "arrival": "2024-Q4"
     },
     {
         "brand": "Almost Real",
-        "name": "Pagani Zonda",
+        "name": "Pagani Zonda Cinque White",
         "price": "280",
         "material": "合金",
         "date": "2024-06",
-        "img": "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=800",
-        "arrival": "现货"
+        "kw": "pagani,zonda",
+        "img": "https://source.unsplash.com/featured/800x600?pagani,zonda&sig=9677",
+        "arrival": "2024-Q4"
     },
     {
         "brand": "BBR",
-        "name": "Ferrari 296 GTB",
+        "name": "Ferrari 296 GTB Rosso Corsa",
         "price": "185",
         "material": "树脂",
         "date": "2024-05",
-        "img": "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=800",
-        "arrival": "现货"
+        "kw": "ferrari,296",
+        "img": "https://source.unsplash.com/featured/800x600?ferrari,296&sig=7367",
+        "arrival": "2024-Q4"
+    },
+    {
+        "brand": "LCD",
+        "name": "McLaren 600LT Chicane Grey",
+        "price": "85",
+        "material": "合金",
+        "date": "2024-09",
+        "kw": "mclaren,600lt",
+        "img": "https://source.unsplash.com/featured/800x600?mclaren,600lt&sig=6338",
+        "arrival": "2024-Q4"
     },
     {
         "brand": "Inno64",
@@ -41,34 +55,38 @@
         "price": "135",
         "material": "合金",
         "date": "2024-10",
-        "img": "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=800",
-        "arrival": "现货"
+        "kw": "gtr,r34",
+        "img": "https://source.unsplash.com/featured/800x600?gtr,r34&sig=6520",
+        "arrival": "2024-Q4"
     },
     {
         "brand": "LCD",
-        "name": "Honda Civic Type R",
+        "name": "Honda Civic Type R FL5",
         "price": "79",
         "material": "合金",
         "date": "2024-06",
-        "img": "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=800",
-        "arrival": "现货"
+        "kw": "civic,typer",
+        "img": "https://source.unsplash.com/featured/800x600?civic,typer&sig=1348",
+        "arrival": "2024-Q4"
     },
     {
         "brand": "Tarmac Works",
-        "name": "Toyota HiAce",
+        "name": "Toyota Hiace Widebody",
         "price": "125",
         "material": "合金",
         "date": "2024-07",
-        "img": "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=800",
-        "arrival": "现货"
+        "kw": "toyota,hiace",
+        "img": "https://source.unsplash.com/featured/800x600?toyota,hiace&sig=3598",
+        "arrival": "2024-Q4"
     },
     {
-        "brand": "Spark",
-        "name": "Porsche 911 GT3",
-        "price": "165",
+        "brand": "Ignition Model",
+        "name": "Mazda RX-7 FD3S RE-Amemiya",
+        "price": "245",
         "material": "树脂",
-        "date": "2024-08",
-        "img": "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=800",
-        "arrival": "现货"
+        "date": "2024-11",
+        "kw": "mazda,rx7",
+        "img": "https://source.unsplash.com/featured/800x600?mazda,rx7&sig=7898",
+        "arrival": "2024-Q4"
     }
 ]
