@@ -1,0 +1,33 @@
+name: Model Daily Update
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # 每天北京时间 10:00 运行
+  workflow_dispatch: # 支持手动点击按钮触发
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Crawler
+        run: python crawler.py
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "ModelBot"
+          git config --global user.email "bot@github.com"
+          git add data.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Daily data sync" && git push)
