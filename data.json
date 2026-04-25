@@ -5,8 +5,7 @@
         "price": "99",
         "material": "合金",
         "date": "2024-07",
-        "kw": "nissan,s15,car",
-        "img": "https://source.unsplash.com/featured/800x600?nissan,s15,car&sig=9567",
+        "img": "https://images.unsplash.com/photo-1616781296180-5a41416e7887?w=600",
         "arrival": "2024-Q4"
     },
     {
@@ -15,8 +14,7 @@
         "price": "105",
         "material": "合金",
         "date": "2024-08",
-        "kw": "lamborghini,revuelto",
-        "img": "https://source.unsplash.com/featured/800x600?lamborghini,revuelto&sig=3754",
+        "img": "https://images.unsplash.com/photo-1621285315410-b99b5a86d262?w=600",
         "arrival": "2024-Q4"
     },
     {
@@ -25,8 +23,7 @@
         "price": "280",
         "material": "合金",
         "date": "2024-06",
-        "kw": "pagani,zonda",
-        "img": "https://source.unsplash.com/featured/800x600?pagani,zonda&sig=771",
+        "img": "https://images.unsplash.com/photo-1549416878-38435d107851?w=600",
         "arrival": "2024-Q4"
     },
     {
@@ -35,18 +32,7 @@
         "price": "185",
         "material": "树脂",
         "date": "2024-05",
-        "kw": "ferrari,296",
-        "img": "https://source.unsplash.com/featured/800x600?ferrari,296&sig=2399",
-        "arrival": "2024-Q4"
-    },
-    {
-        "brand": "LCD",
-        "name": "McLaren 600LT Chicane Grey",
-        "price": "85",
-        "material": "合金",
-        "date": "2024-09",
-        "kw": "mclaren,600lt",
-        "img": "https://source.unsplash.com/featured/800x600?mclaren,600lt&sig=8451",
+        "img": "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=600",
         "arrival": "2024-Q4"
     },
     {
@@ -55,8 +41,7 @@
         "price": "135",
         "material": "合金",
         "date": "2024-10",
-        "kw": "gtr,r34",
-        "img": "https://source.unsplash.com/featured/800x600?gtr,r34&sig=3722",
+        "img": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600",
         "arrival": "2024-Q4"
     },
     {
@@ -65,8 +50,7 @@
         "price": "79",
         "material": "合金",
         "date": "2024-06",
-        "kw": "civic,typer",
-        "img": "https://source.unsplash.com/featured/800x600?civic,typer&sig=9442",
+        "img": "https://images.unsplash.com/photo-1605333796853-53d7f1d5301f?w=600",
         "arrival": "2024-Q4"
     },
     {
@@ -75,8 +59,7 @@
         "price": "125",
         "material": "合金",
         "date": "2024-07",
-        "kw": "toyota,hiace",
-        "img": "https://source.unsplash.com/featured/800x600?toyota,hiace&sig=8485",
+        "img": "https://images.unsplash.com/photo-1563228186-b4ac125f18ff?w=600",
         "arrival": "2024-Q4"
     },
     {
@@ -85,8 +68,43 @@
         "price": "245",
         "material": "树脂",
         "date": "2024-11",
-        "kw": "mazda,rx7",
-        "img": "https://source.unsplash.com/featured/800x600?mazda,rx7&sig=6629",
+        "img": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600",
+        "arrival": "2024-Q4"
+    },
+    {
+        "brand": "Spark",
+        "name": "Porsche 911 GT3 R Manthey",
+        "price": "165",
+        "material": "树脂",
+        "date": "2024-08",
+        "img": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=600",
+        "arrival": "2024-Q4"
+    },
+    {
+        "brand": "Kaido House",
+        "name": "Datsun 510 Pro Street",
+        "price": "115",
+        "material": "合金",
+        "date": "2024-09",
+        "img": "https://images.unsplash.com/photo-1614201397017-d5d85202677d?w=600",
+        "arrival": "2024-Q4"
+    },
+    {
+        "brand": "One Model",
+        "name": "Honda NSX-R NA2 Type R",
+        "price": "230",
+        "material": "树脂",
+        "date": "2024-06",
+        "img": "https://images.unsplash.com/photo-1600706637375-7b563820b70d?w=600",
+        "arrival": "2024-Q4"
+    },
+    {
+        "brand": "Pop Race",
+        "name": "Aston Martin DBS Superleggera",
+        "price": "120",
+        "material": "合金",
+        "date": "2024-12",
+        "img": "https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=600",
         "arrival": "2024-Q4"
     }
 ]
