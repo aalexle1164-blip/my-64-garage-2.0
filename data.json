@@ -6,18 +6,16 @@
         "material": "合金",
         "date": "2024-07",
         "arrival": "2024-10",
-        "kw": "silvia",
-        "img": "https://source.unsplash.com/featured/800x600?car,silvia&sig=921"
+        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
     },
     {
         "brand": "MiniGT",
-        "name": "Lamborghini Revuelto Arancio Apodis",
+        "name": "Lamborghini Revuelto Orange",
         "price": "105",
         "material": "合金",
         "date": "2024-08",
         "arrival": "2024-12",
-        "kw": "lamborghini",
-        "img": "https://source.unsplash.com/featured/800x600?car,lamborghini&sig=149"
+        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
     },
     {
         "brand": "Almost Real",
@@ -26,18 +24,7 @@
         "material": "合金",
         "date": "2024-06",
         "arrival": "现货",
-        "kw": "zonda",
-        "img": "https://source.unsplash.com/featured/800x600?car,zonda&sig=385"
-    },
-    {
-        "brand": "Almost Real",
-        "name": "Mercedes-AMG GT R Green Hell",
-        "price": "260",
-        "material": "合金",
-        "date": "2024-09",
-        "arrival": "2025-01",
-        "kw": "amg-gt",
-        "img": "https://source.unsplash.com/featured/800x600?car,amg-gt&sig=791"
+        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
     },
     {
         "brand": "BBR",
@@ -46,48 +33,7 @@
         "material": "树脂",
         "date": "2024-05",
         "arrival": "现货",
-        "kw": "ferrari",
-        "img": "https://source.unsplash.com/featured/800x600?car,ferrari&sig=834"
-    },
-    {
-        "brand": "BBR",
-        "name": "Maserati MC20 Cielo Blue",
-        "price": "190",
-        "material": "树脂",
-        "date": "2024-07",
-        "arrival": "2024-11",
-        "kw": "maserati",
-        "img": "https://source.unsplash.com/featured/800x600?car,maserati&sig=331"
-    },
-    {
-        "brand": "LCD",
-        "name": "McLaren 600LT Chicane Grey",
-        "price": "85",
-        "material": "合金",
-        "date": "2024-09",
-        "arrival": "2024-12",
-        "kw": "mclaren",
-        "img": "https://source.unsplash.com/featured/800x600?car,mclaren&sig=39"
-    },
-    {
-        "brand": "LCD",
-        "name": "Honda Civic Type R FL5 White",
-        "price": "79",
-        "material": "合金",
-        "date": "2024-06",
-        "arrival": "现货",
-        "kw": "civic-typer",
-        "img": "https://source.unsplash.com/featured/800x600?car,civic-typer&sig=26"
-    },
-    {
-        "brand": "Spark",
-        "name": "Porsche 911 GT3 R #911 Manthey",
-        "price": "165",
-        "material": "树脂",
-        "date": "2024-08",
-        "arrival": "2024-11",
-        "kw": "porsche-911",
-        "img": "https://source.unsplash.com/featured/800x600?car,porsche-911&sig=676"
+        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
     },
     {
         "brand": "Inno64",
@@ -96,8 +42,16 @@
         "material": "合金",
         "date": "2024-10",
         "arrival": "2025-02",
-        "kw": "gtr-r34",
-        "img": "https://source.unsplash.com/featured/800x600?car,gtr-r34&sig=343"
+        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
+    },
+    {
+        "brand": "LCD",
+        "name": "Honda Civic Type R FL5 White",
+        "price": "79",
+        "material": "合金",
+        "date": "2024-06",
+        "arrival": "现货",
+        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
     },
     {
         "brand": "Tarmac Works",
@@ -106,17 +60,6 @@
         "material": "合金",
         "date": "2024-07",
         "arrival": "2024-11",
-        "kw": "hiace",
-        "img": "https://source.unsplash.com/featured/800x600?car,hiace&sig=812"
-    },
-    {
-        "brand": "Ignition Model",
-        "name": "Toyota Supra JZA80 Blue",
-        "price": "240",
-        "material": "树脂",
-        "date": "2024-08",
-        "arrival": "2025-01",
-        "kw": "supra",
-        "img": "https://source.unsplash.com/featured/800x600?car,supra&sig=277"
+        "img": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800"
     }
 ]
