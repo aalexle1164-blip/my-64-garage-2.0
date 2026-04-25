@@ -1,0 +1,20 @@
+[
+    {
+        "brand": "MiniGT",
+        "name": "Lamborghini Revuelto Arancio Apodis",
+        "price": "99",
+        "material": "合金",
+        "date": "2024-07",
+        "arrival": "2024-10",
+        "img": "https://via.placeholder.com/400x250?text=MiniGT+Revuelto"
+    },
+    {
+        "brand": "BBR",
+        "name": "Maserati MC20 Cielo",
+        "price": "180",
+        "material": "树脂",
+        "date": "2024-05",
+        "arrival": "现货",
+        "img": "https://via.placeholder.com/400x250?text=BBR+MC20"
+    }
+]
