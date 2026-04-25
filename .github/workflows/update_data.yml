@@ -7,50 +7,40 @@ on:
 
 jobs:
   update-data:
-    # 强制指定使用最新的 ubuntu 镜像，通常它会预装最新的运行环境
     runs-on: ubuntu-latest
     
-    # 设置权限，确保能够推送到仓库
+    # 这里的环境变量是解决 2026 年 Node 20 弃用警告的关键
+    env:
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+
     permissions:
       contents: write
 
     steps:
-      # 1. 检出代码 - 保持 v4，但通过环境变量强制运行时
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          # 确保拉取所有历史记录，避免 git push 失败
-          fetch-depth: 0
 
-      # 2. 安装 Python - 使用最新的 v5 版本
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-          # 告诉 setup-python 使用当前系统的 Node 运行
-          update-environment: true
 
-      # 3. 安装依赖并运行爬虫
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run Crawler
         run: python crawler.py
 
-      # 4. 提交数据 - 使用更稳健的提交逻辑
       - name: Commit and Push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          # 检查是否有文件更改，没有则退出，有则提交
+          # 如果没有变化则不提交，避免报错
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "No changes"
           else
-            git commit -m "Auto-update model data $(date +'%Y-%m-%d %H:%M')"
-            git push origin main
+            git commit -m "Auto sync: $(date)"
+            git push
           fi
