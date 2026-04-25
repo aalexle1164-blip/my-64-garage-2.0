@@ -1,4 +1,4 @@
-name: Model Daily Update
+name: Model Daily Sync
 
 on:
   schedule:
@@ -8,39 +8,30 @@ on:
 jobs:
   update-data:
     runs-on: ubuntu-latest
-    
-    # 这里的环境变量是解决 2026 年 Node 20 弃用警告的关键
-    env:
-      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
-
     permissions:
       contents: write
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
-      - name: Install dependencies
+      # 直接使用 Git 指令，跳过 Node.js 驱动的 checkout 插件
+      - name: Clone Repository
         run: |
-          pip install -r requirements.txt
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git .
+      
+      # 检查环境并安装依赖
+      - name: Run Crawler Engine
+        run: |
+          python3 -m pip install requests
+          python3 crawler.py
 
-      - name: Run Crawler
-        run: python crawler.py
-
-      - name: Commit and Push
+      # 提交数据
+      - name: Push New Data
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          # 如果没有变化则不提交，避免报错
-          if git diff --staged --quiet; then
-            echo "No changes"
-          else
-            git commit -m "Auto sync: $(date)"
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-refresh model database: $(date +'%Y-%m-%d')"
             git push
+          else
+            echo "No changes found, skipping push."
           fi
